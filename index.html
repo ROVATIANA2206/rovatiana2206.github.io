@@ -1,96 +1,16 @@
-<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio de Rovatiana</title>
 
-    <!-- Favicon -->
+    <!-- Favicon pour l'icône de l'entête -->
     <link rel="icon" href="./icone.png" type="image/png" />
-
-    <!-- Google Fonts pour un style moderne -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Tailwind CSS CDN pour prototypage rapide -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <style>
-      /* Animation dégradé de fond */
-      body {
-        font-family: 'Inter', sans-serif;
-        margin: 0;
-        height: 100vh;
-        background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
-        background-size: 400% 400%;
-        animation: gradientBG 15s ease infinite;
-        color: #f5f5f5;
-      }
-
-      @keyframes gradientBG {
-        0% {background-position: 0% 50%;}
-        50% {background-position: 100% 50%;}
-        100% {background-position: 0% 50%;}
-      }
-
-      .fade-in {
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 1s forwards;
-      }
-
-      @keyframes fadeInUp {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .highlight {
-        color: #8B5CF6;
-        transition: transform 0.3s ease, color 0.3s ease;
-      }
-
-      .highlight:hover {
-        transform: scale(1.1);
-        color: #7C3AED;
-      }
-    </style>
-    <script type="module" crossorigin src="./assets/index-1ztTLXC9.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BbmMYwhs.css">
+    <script type="module" crossorigin src="./assets/index-B84MK8dW.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-dZsi7_4h.css">
   </head>
-
-  <body class="flex items-center justify-center">
-    <div class="text-center space-y-6 px-6 max-w-2xl">
-
-      <!-- Icône -->
-      <img src="./icone.png" alt="Logo Rovatiana" class="mx-auto w-24 h-24 rounded-full shadow-lg animate-bounce"/>
-
-      <!-- Texte principal -->
-      <h1 class="text-4xl md:text-5xl font-bold fade-in">
-        Rovatiana Niriniaina Désiré
-      </h1>
-
-      <p class="text-lg md:text-xl text-gray-300 fade-in" style="animation-delay: 0.3s">
-        Développeur <span class="highlight">Full-Stack</span> | Passionné par <span class="highlight">IA</span> et <span class="highlight">applications modernes</span>
-      </p>
-
-      <p class="text-gray-400 fade-in" style="animation-delay: 0.5s">
-        Basé à Antananarivo, Madagascar • Disponible immédiatement
-      </p>
-
-      <!-- Boutons -->
-      <div class="flex flex-col md:flex-row justify-center gap-4 fade-in" style="animation-delay: 0.7s">
-        <a href="/#projects" class="px-6 py-3 bg-[#8B5CF6] hover:bg-[#7C3AED] rounded-xl font-semibold shadow-lg transition-all">
-          Voir mes projets
-        </a>
-        <a href="/docs/cv-2025.pdf" download="CV_Rovatiana.pdf" class="px-6 py-3 border border-[#8B5CF6] rounded-xl font-semibold text-[#8B5CF6] hover:bg-white/10 transition-all">
-          Télécharger CV
-        </a>
-      </div>
-    </div>
-
-    <!-- Script Vite -->
+  <body>
+    <div id="root"></div>
+    <!-- Vite injecte automatiquement les scripts lors du build -->
   </body>
 </html>
