@@ -24,16 +24,7 @@ export default function ProjectCard({ p }) {
           </span>
         ))}
       </div>
-      {p.link && (
-        <a
-          href={p.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block mt-3 text-[#8B5CF6] underline"
-        >
-          Voir le projet
-        </a>
-      )}
+      {/* Lien "Voir le projet" supprimé */}
     </motion.div>
   );
 }
