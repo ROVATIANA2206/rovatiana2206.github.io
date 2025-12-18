@@ -1,8 +1,9 @@
-import SectionTitle from '../components/SectionTitle'
-import ProjectCard from '../components/ProjectCard'
-import profile from '../data/profile'
+import { motion } from "framer-motion";
+import SectionTitle from "../components/SectionTitle";
+import ProjectCard from "../components/ProjectCard";
+import profile from "../data/profile";
 
-// CHEMINS CORRIGÉS
+// Images locales depuis /public/images
 const localImages = [
   "/images/project1.jpg",
   "/images/project2.jpg",
@@ -11,27 +12,57 @@ const localImages = [
   "/images/project5.jpg",
   "/images/project6.jpg",
   "/images/placeholder.jpg",
-]
+];
+
+// Variants Framer Motion (légers)
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.45, ease: "easeOut" },
+  },
+};
 
 export default function Projects() {
   const projectsWithImages = (profile.projects || []).map((p, i) => ({
     ...p,
     image: localImages[i % localImages.length],
     name: p.name || p.title || `Projet ${i + 1}`,
-    tagline: p.tagline || '',
-    desc: p.desc || p.description || '',
+    desc: p.desc || p.description || "",
     stack: p.stack || [],
-    link: p.link || '',
-  }))
+  }));
 
   return (
-    <section className="container py-14 md:py-20">
-      <SectionTitle eyebrow="Portfolio" title="Tous les projets" subtitle="Sélection de projets académiques et personnels" />
-      <div className="grid md:grid-cols-2 gap-8">
+    <section className="container mx-auto px-6 py-16 md:py-24">
+      <SectionTitle
+        eyebrow="Portfolio"
+        title="Tous les projets"
+        subtitle="Sélection de projets académiques et personnels"
+      />
+
+      <motion.div
+        className="grid md:grid-cols-2 gap-8 mt-10"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+      >
         {projectsWithImages.map((p, i) => (
-          <ProjectCard key={i} p={p} />
+          <motion.div key={i} variants={cardVariants}>
+            <ProjectCard p={p} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
-  )
+  );
 }
